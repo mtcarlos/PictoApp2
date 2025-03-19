@@ -9,16 +9,22 @@
 </head>
 <body>
   <header>
-    <h1>PictoApp</h1>
+    <h1>Pictogramas de Comunicación</h1>
   </header>
   
-  <nav id="category-menu">
-    <button data-category="todas" class="active">Todas</button>
-    <button data-category="emociones">Emociones</button>
-    <button data-category="acciones">Acciones</button>
-    <button data-category="objetos">Objetos</button>
-    <!-- Agrega más botones según las categorías que necesites -->
-  </nav>
+  <!-- Contenedor para el dropdown y el botón de navegación -->
+  <div class="nav-controls">
+    <!-- Dropdown para categorías -->
+    <div class="dropdown">
+      <div id="picto-display" class="display-button">Pictos &#x25BC;</div>
+      <div id="category-options" class="dropdown-content hidden"></div>
+    </div>
+    
+    <!-- Botón de navegación hacia frases.html -->
+    <div class="nav-link-container">
+      <a href="frases.html" class="nav-link-button">Crear Frases</a>
+    </div>
+  </div>
   
   <!-- Barra de búsqueda -->
   <div id="search-container">
@@ -42,5 +48,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-
-

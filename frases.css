@@ -1,0 +1,178 @@
+/* Base reset y variables */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --primary-color: #63b1f0;
+    --secondary-color: #0D47A1;
+    --accent-color: #FFC107;
+    --background-color: #f7f7f7;
+    --text-color: #333;
+    --card-bg: #fff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+  }
+  
+  /* Estilos globales */
+  body {
+    font-family: 'Comic Neue', cursive, Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Encabezado */
+  header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 1.5em;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  /* Área para construir la frase */
+  #phrase-builder {
+    background: var(--card-bg);
+    margin: 1em auto;
+    padding: 1em;
+    max-width: 800px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #phrase-display {
+    min-height: 100px;
+    width: 100%;
+    border: 2px dashed var(--primary-color);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    background-color: #fff;
+  }
+  
+  #phrase-display img {
+    max-height: 80px;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+  }
+  
+  /* Botón para borrar la frase */
+  #clear-phrase {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+  }
+  
+  #clear-phrase:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+  }
+  
+  /* Buscador de pictogramas */
+  #search-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+  }
+  
+  #search-input {
+    width: 90%;
+    max-width: 500px;
+    padding: 0.75em 1em;
+    font-size: 1em;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    outline: none;
+    transition: var(--transition);
+  }
+  
+  #search-input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Grid de pictogramas */
+  #pictogram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5em;
+    padding: 1em;
+    max-width: 800px;
+    margin: 0 auto 1em;
+  }
+  
+  .pictogram {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 0.5em;
+    text-align: center;
+    transition: var(--transition);
+  }
+  
+  .pictogram:hover {
+    transform: scale(1.05);
+  }
+  
+  .pictogram img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5em;
+    border-radius: var(--border-radius);
+  }
+  
+  .add-button {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9em;
+  }
+  
+  .add-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+  }
+
+  
+  .nav-link-container {
+    text-align: center;
+    margin: 1em 0;
+  }
+  
+  .nav-link-button {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.75em 1.5em;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+  
+  .nav-link-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+  }
+  

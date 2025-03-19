@@ -35,19 +35,59 @@ header {
   font-weight: bold;
 }
 
-/* Menú de categorías */
-nav#category-menu {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 1em 0;
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  max-width: 200px;
+  margin: 1em auto;
 }
 
-nav#category-menu button {
+/* Botón desplegable */
+#picto-display {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.75em 1.5em;
+  text-align: center;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  user-select: none;
+}
+
+#picto-display:hover {
+  transform: translateY(-2px);
+}
+
+/* Contenido del dropdown */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-top: 0.5em;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.5em;
+}
+
+/* Clase para ocultar elementos */
+.hidden {
+  display: none;
+}
+
+/* Botones de categoría dentro del dropdown */
+.category-button {
   background: var(--card-bg);
   border: none;
-  margin: 0.5em;
-  padding: 0.75em 1.5em;
+  padding: 0.5em 1em;
   font-size: 1em;
   cursor: pointer;
   border-radius: var(--border-radius);
@@ -55,8 +95,7 @@ nav#category-menu button {
   transition: var(--transition);
 }
 
-nav#category-menu button.active,
-nav#category-menu button:hover {
+.category-button:hover {
   background: var(--primary-color);
   color: #fff;
   transform: translateY(-2px);
@@ -145,7 +184,7 @@ nav#category-menu button:hover {
   animation: fadeIn 0.3s ease-out;
 }
 
-/* Nueva regla para contener la imagen en el modal */
+/* Regla para contener la imagen en el modal */
 .modal-content img {
   max-width: 100%;
   max-height: 80vh;
@@ -176,4 +215,25 @@ nav#category-menu button:hover {
 
 .close-button:hover {
   color: var(--primary-color);
+}
+
+
+.nav-link-container {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.nav-link-button {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.75em 1.5em;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.nav-link-button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
 }
