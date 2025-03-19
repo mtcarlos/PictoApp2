@@ -73,4 +73,7 @@ const pictogramas = [
   
   // Carga inicial de todos los pictogramas
   cargarPictogramas();
+
+  
+
   
