@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archivo de Pictogramas</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>PictoApp</h1>
+  </header>
+  
+  <nav id="category-menu">
+    <button data-category="todas" class="active">Todas</button>
+    <button data-category="emociones">Emociones</button>
+    <button data-category="acciones">Acciones</button>
+    <button data-category="objetos">Objetos</button>
+    <!-- Agrega más botones según las categorías que necesites -->
+  </nav>
+  
+  <!-- Barra de búsqueda -->
+  <div id="search-container">
+    <input type="text" id="search-bar" placeholder="Buscar pictograma...">
+  </div>
+  
+  <main>
+    <section id="pictogram-grid">
+      <!-- Los pictogramas se cargarán aquí dinámicamente -->
+    </section>
+  </main>
+
+  <div id="pictogram-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <img id="modal-img" src="" alt="Pictograma">
+      <p id="modal-name"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
