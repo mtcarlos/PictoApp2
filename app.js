@@ -1,7 +1,7 @@
 // Ejemplo de datos para pictogramas (puedes reemplazarlo con una llamada a un JSON o base de datos)
 const pictogramas = [
     { id: 1, nombre: 'Feliz', categoria: 'emociones', imagen: 'recursos/feliz.jpg' },
-    { id: 2, nombre: 'Triste', categoria: 'emociones', imagen: 'img/triste.png' },
+    { id: 2, nombre: 'Triste', categoria: 'emociones', imagen: 'recursos/triste.png' },
     { id: 3, nombre: 'Correr', categoria: 'acciones', imagen: 'img/correr.png' },
     { id: 4, nombre: 'Silla', categoria: 'objetos', imagen: 'img/silla.png' }
     // Agrega más pictogramas según necesites
@@ -76,4 +76,3 @@ const pictogramas = [
 
   
 
-  
