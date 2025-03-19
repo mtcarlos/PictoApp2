@@ -6,10 +6,10 @@
   }
   
   :root {
-    --primary-color: #2196F3;
+    --primary-color: #90c7f4;
     --secondary-color: #0D47A1;
     --accent-color: #FFC107;
-    --background-color: #f4f7f9;
+    --background-color: #333;
     --text-color: #333;
     --card-bg: #fff;
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -83,6 +83,7 @@
   
   #search-bar:focus {
     border-color: var(--secondary-color);
+    box-shadow: 0 6px 8px rgba(255, 253, 253, 0.4);
   }
   
   /* Grid de pictogramas */
@@ -105,6 +106,8 @@
   
   .pictogram:hover {
     transform: scale(1.05);
+    background-color: #90c7f4;
+    color: #f7f7f7;
   }
   
   .pictogram img {
@@ -167,5 +170,4 @@
     color: var(--primary-color);
   }
 
-  
   
