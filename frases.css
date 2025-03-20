@@ -42,7 +42,7 @@
     padding: 1em;
     max-width: 800px;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,7 +69,7 @@
   
   /* Botón para borrar la frase */
   #clear-phrase {
-    background: var(--primary-color);
+    background: #d00000;
     color: #fff;
     padding: 0.75em 1.5em;
     border: none;
@@ -80,8 +80,9 @@
   }
   
   #clear-phrase:hover {
-    background: var(--secondary-color);
+    background: #ff0000;
     transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
   }
   
   /* Buscador de pictogramas */
@@ -140,8 +141,8 @@
   }
   
   .add-button {
-    background: var(--primary-color);
-    color: #fff;
+    background: #0ace00;
+    color: #ffffff;
     padding: 0.5em 1em;
     border: none;
     border-radius: var(--border-radius);
@@ -151,7 +152,7 @@
   }
   
   .add-button:hover {
-    background: var(--secondary-color);
+    background: #10ff04;
     transform: translateY(-2px);
   }
 

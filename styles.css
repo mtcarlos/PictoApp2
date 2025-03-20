@@ -221,6 +221,7 @@ header {
 .nav-link-container {
   text-align: center;
   margin: 1em 0;
+  background: var(--background-color);
 }
 
 .nav-link-button {
