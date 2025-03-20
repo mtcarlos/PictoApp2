@@ -6,10 +6,10 @@
 }
 
 :root {
-  --primary-color: #63b1f0;
-  --secondary-color: #0D47A1;
+  --primary-color: #63b1f0; /* Azul medio */
+  --secondary-color: #0D47A1; /* Azul oscuro */
   --accent-color: #FFC107;
-  --background-color: #f7f7f7;
+  --background-color: #e3f2fd; /* Azul muy claro, unifica header y fondo */
   --text-color: #333;
   --card-bg: #fff;
   --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -19,7 +19,7 @@
 
 /* Estilos globales */
 body {
-  font-family: 'Comic Neue', cursive, Arial, sans-serif;
+  font-family: 'Bubblegum Sans', cursive, Arial, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -145,7 +145,7 @@ header {
 
 .pictogram:hover {
   transform: scale(1.05);
-  background-color: #63b1f0;
+  background-color: var(--primary-color);
   color: #f7f7f7;
 }
 
@@ -216,7 +216,6 @@ header {
 .close-button:hover {
   color: var(--primary-color);
 }
-
 
 .nav-link-container {
   text-align: center;
