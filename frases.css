@@ -89,7 +89,6 @@ header {
   transition: background-color 0.3s ease;
 }
 
-/* Estilo para el drop target en modo dragover */
 #phrase-display.dragover {
   background-color: rgba( var(--primary-color), 0.1);
 }
@@ -99,13 +98,22 @@ header {
   object-fit: contain;
   border-radius: var(--border-radius);
   cursor: pointer;
+  transition: var(--transition);
 }
 
-/* Permite eliminar pictogramas al pulsar/tocar */
 #phrase-display img:hover {
   opacity: 0.8;
   transform: scale(1.05);
-  transition: var(--transition);
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.added-bounce {
+  animation: bounce 0.5s ease;
 }
 
 /* Botón para borrar la frase */
@@ -123,6 +131,24 @@ header {
   background: #ff0000;
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Botón para escuchar la frase */
+.read-phrase {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  margin-top: 1em;
+}
+.read-phrase:hover {
+  transform: translateY(-2px);
 }
 
 /* Buscador de pictogramas */
@@ -162,10 +188,13 @@ header {
   box-shadow: var(--shadow);
   padding: 0.5em;
   text-align: center;
+  cursor: pointer;
   transition: var(--transition);
 }
 .pictogram:hover {
   transform: scale(1.05);
+  background-color: var(--primary-color);
+  color: #f7f7f7;
 }
 .pictogram img {
   max-width: 100%;
@@ -193,6 +222,7 @@ header {
 .nav-link-container {
   text-align: center;
   margin: 1em 0;
+  background: var(--background-color);
 }
 .nav-link-button {
   background: var(--primary-color);

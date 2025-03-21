@@ -13,22 +13,18 @@ const searchInput = document.getElementById('search-input');
 const phraseDisplay = document.getElementById('phrase-display');
 const clearPhraseBtn = document.getElementById('clear-phrase');
 const themeToggleBtn = document.getElementById('theme-toggle');
+const readPhraseBtn = document.getElementById('read-phrase');
 
 function cargarPictogramas() {
-  // Limpiar grid
   pictogramGrid.innerHTML = '';
-
-  // Obtener término de búsqueda
   const query = searchInput.value.toLowerCase().trim();
   const pictogramasFiltrados = query === ''
     ? pictogramas
     : pictogramas.filter(p => p.nombre.toLowerCase().includes(query));
-
-  // Generar elementos para cada pictograma con atributo draggable
+    
   pictogramasFiltrados.forEach(p => {
     const div = document.createElement('div');
     div.classList.add('pictogram');
-
     div.innerHTML = `
       <img src="${p.imagen}" alt="${p.nombre}" draggable="true" data-id="${p.id}">
       <p>${p.nombre}</p>
@@ -39,9 +35,7 @@ function cargarPictogramas() {
     img.addEventListener('dragstart', (e) => {
       e.dataTransfer.setData('text/plain', p.id);
     });
-    // También soportar touch (mínimo para disparar el drag)
     img.addEventListener('touchstart', (e) => {
-      // Puedes implementar lógica personalizada para touch si se desea
       e.preventDefault();
     });
     pictogramGrid.appendChild(div);
@@ -63,25 +57,33 @@ phraseDisplay.addEventListener('drop', (e) => {
   agregarAPhrase(id);
 });
 
-// Función para agregar pictograma a la frase (si no está ya, o siempre se añade)
+// Función para agregar pictograma a la frase con animación bounce
 function agregarAPhrase(id) {
   const pictograma = pictogramas.find(p => p.id === id);
   if (pictograma) {
     const img = document.createElement('img');
     img.src = pictograma.imagen;
     img.alt = pictograma.nombre;
+    img.classList.add('added-bounce'); // Añade la animación
     // Permitir eliminar el pictograma al hacer clic
     img.addEventListener('click', () => {
       phraseDisplay.removeChild(img);
     });
     phraseDisplay.appendChild(img);
-    // Quitar placeholder si existe
     const placeholder = phraseDisplay.querySelector('.placeholder');
     if (placeholder) placeholder.remove();
+    // Quitar la clase de animación tras 500ms
+    setTimeout(() => {
+      img.classList.remove('added-bounce');
+    }, 500);
+    // Opcional: vibrar el dispositivo (si es compatible)
+    if (navigator.vibrate) {
+      navigator.vibrate(50);
+    }
   }
 }
 
-// Delegar evento de "Añadir" en el grid
+// Delegar evento para botón "Añadir" en el grid
 pictogramGrid.addEventListener('click', (e) => {
   if (e.target.classList.contains('add-button')) {
     const id = parseInt(e.target.getAttribute('data-id'));
@@ -89,12 +91,10 @@ pictogramGrid.addEventListener('click', (e) => {
   }
 });
 
-// Evento para filtrar pictogramas al escribir
 searchInput.addEventListener('input', () => {
   cargarPictogramas();
 });
 
-// Botón para borrar la frase
 clearPhraseBtn.addEventListener('click', () => {
   phraseDisplay.innerHTML = '<p class="placeholder">Arrastra los pictogramas aquí o pulsa "Añadir"</p>';
 });
@@ -102,6 +102,24 @@ clearPhraseBtn.addEventListener('click', () => {
 // Botón para cambiar de tema
 themeToggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark');
+  if (document.body.classList.contains('dark')) {
+    themeToggleBtn.textContent = "🌙";
+  } else {
+    themeToggleBtn.textContent = "☀️";
+  }
+});
+
+// Funcionalidad para leer la frase con síntesis de voz
+readPhraseBtn.addEventListener('click', () => {
+  const images = phraseDisplay.querySelectorAll('img');
+  if (images.length > 0) {
+    let phraseText = '';
+    images.forEach(img => {
+      phraseText += img.alt + ' ';
+    });
+    const utterance = new SpeechSynthesisUtterance(phraseText);
+    window.speechSynthesis.speak(utterance);
+  }
 });
 
 // Cargar pictogramas al inicio

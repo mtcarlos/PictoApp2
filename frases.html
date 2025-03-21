@@ -12,16 +12,15 @@
 <body>
   <header>
     <h1>Crea Frases con Pictogramas</h1>
-    
+
   </header>
 
   <!-- Botón de navegación hacia index.html -->
   <div class="nav-link-container">
     <a href="index.html" class="nav-link-button">Ver Pictogramas</a>
-    <button id="theme-toggle" class="theme-toggle">🌙</button>
+     <!-- Botón de cambio de tema -->
+   <button id="theme-toggle" class="theme-toggle">🌙</button>
   </div>
-
-  
 
   <!-- Área para construir la frase -->
   <section id="phrase-builder">
@@ -29,6 +28,8 @@
       <p class="placeholder">Arrastra los pictogramas aquí o pulsa "Añadir"</p>
     </div>
     <button id="clear-phrase">Borrar</button>
+    <!-- Botón para que la app lea la frase en voz alta -->
+    <button id="read-phrase" class="read-phrase" title="Escuchar Frase">🔊</button>
   </section>
 
   <!-- Buscador de pictogramas -->
@@ -38,7 +39,7 @@
 
   <!-- Grid de pictogramas -->
   <section id="pictogram-grid">
-    <!-- Se cargarán dinámicamente -->
+    <!-- Los pictogramas se cargarán dinámicamente -->
   </section>
 
   <script src="frases.js"></script>
