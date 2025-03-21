@@ -2,8 +2,9 @@
 const pictogramas = [
   { id: 1, nombre: 'Feliz', categoria: 'emociones', imagen: 'recursos/feliz.jpg' },
   { id: 2, nombre: 'Triste', categoria: 'emociones', imagen: 'recursos/triste.png' },
-  { id: 3, nombre: 'Correr', categoria: 'acciones', imagen: 'img/correr.png' },
-  { id: 4, nombre: 'Silla', categoria: 'objetos', imagen: 'img/silla.png' }
+  { id: 3, nombre: 'Correr', categoria: 'acciones', imagen: 'recursos/correr.png' },
+  { id: 4, nombre: 'Silla', categoria: 'objetos', imagen: 'recursos/silla.png' },
+  { id: 5, nombre: 'Silencio', categoria: 'acciones', imagen: 'recursos/silencio.png' }
   // Agrega más pictogramas según necesites
 ];
 

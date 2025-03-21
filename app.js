@@ -94,3 +94,22 @@ pictoDisplay.addEventListener('click', () => {
 // Generar opciones de categorías y carga inicial de pictogramas
 generarOpcionesCategorias();
 cargarPictogramas();
+
+
+// ... Código existente ...
+
+// Agregar funcionalidad de cambio de tema en index.html
+const themeToggleBtn = document.getElementById('theme-toggle');
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    // Cambiar el emoji según el tema: sol para claro, luna para oscuro.
+    if (document.body.classList.contains('dark')) {
+      themeToggleBtn.textContent = "🌙";
+    } else {
+      themeToggleBtn.textContent = "☀️";
+    }
+  });
+}
+
+// ... Resto del código existente ...
